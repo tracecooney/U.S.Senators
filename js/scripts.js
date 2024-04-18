@@ -1,5 +1,5 @@
 // Import senators data
-import { senators } from '../data/people.js';
+import { senators } from '../data/senators.js';
 
 // Tag HTML elements
 const myParent = document.querySelector('#peopleHere');
@@ -8,26 +8,26 @@ const myParent = document.querySelector('#peopleHere');
 if (!myParent) {
     console.error("Parent element not found");
 } else {
-    // Loop through all the people
-    function displayPeople(people) {
+    // Loop through all the senators
+    function displaySenators(senators) {
         // Clear previous content
         myParent.innerHTML = "";
 
-        people.forEach(person => {
+        senators.forEach(senator => {
             // Create figure element
             const myFigure = document.createElement('figure');
 
             // Create image element
             const myImage = document.createElement('img');
-            myImage.src = `https://www.govtrack.us/static/legislator-photos/${person.url}-200px.jpeg`;
-            myImage.alt = person.name;
+            myImage.src = `https://www.govtrack.us/static/legislator-photos/${senator.url}-200px.jpeg`;
+            myImage.alt = senator.name;
 
             // Create caption element
             const myCaption = document.createElement('figcaption');
-            myCaption.textContent = person.name;
+            myCaption.textContent = senator.name;
 
             // Assign gender class
-            switch (person.gender) {
+            switch (senator.gender) {
                 case "female":
                     myFigure.className = "female";
                     break;
@@ -47,6 +47,6 @@ if (!myParent) {
         });
     }
 
-    // Call the function
-    displayPeople(senators);
+    // Call the function to display senators
+    displaySenators(senators);
 }
