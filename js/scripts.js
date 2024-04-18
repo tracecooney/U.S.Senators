@@ -19,7 +19,10 @@ if (!myParent) {
 
             // Create image element
             const myImage = document.createElement('img');
-            myImage.src = `https://www.govtrack.us/static/legislator-photos/${senator.url}-200px.jpeg`;
+            
+            // If senator.url contains only the ID
+            myImage.src = `https://www.govtrack.us/static/legislator-photos/${senator.url}.jpeg`;
+
             myImage.alt = senator.name;
 
             // Create caption element
