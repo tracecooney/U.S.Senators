@@ -1,0 +1,94 @@
+/*
+    Declaration of CSS Independence
+*/
+
+/* Default styles for figure element */
+figure {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Styles for image element */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles for caption */
+figcaption {
+    margin-top: 5px;
+}
+
+/* Media queries for responsive layout */
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    #peopleHere figure {
+        width: 100%; /* Display one picture at a time */
+    }
+}
+
+/* For tablet devices */
+@media (min-width: 601px) and (max-width: 900px) {
+    #peopleHere figure {
+        width: 50%; /* Display two pictures in a row */
+    }
+}
+
+/* For desktop devices */
+@media (min-width: 901px) {
+    #peopleHere figure {
+        width: 33.33%; /* Display three pictures in a row */
+    }
+}
+
+/* Additional styles for enhanced experience */
+
+/* Fancy border */
+figure {
+    border: 2px solid #1E90FF;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Captions in style */
+figcaption {
+    font-style: italic;
+    color: #696969;
+}
+
+/* Hover effect for images */
+img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Highlighted media queries for emphasis */
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    /* Highlighting */
+    #peopleHere figure {
+        background-color: #F0E68C; /* Pale Goldenrod */
+        box-shadow: 2px 2px 5px #888888;
+    }
+}
+
+/* For tablet devices */
+@media (min-width: 601px) and (max-width: 900px) {
+    /* Highlighting */
+    #peopleHere figure {
+        background-color: #98FB98; /* Pale Green */
+        box-shadow: 2px 2px 5px #888888;
+    }
+}
+
+/* For desktop devices */
+@media (min-width: 901px) {
+    /* Highlighting */
+    #peopleHere figure {
+        background-color: #FFA07A; /* Light Salmon */
+        box-shadow: 2px 2px 5px #888888;
+    }
+}
