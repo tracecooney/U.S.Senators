@@ -4,9 +4,49 @@ console.log(senators);
 
 // Tag HTML elements
 const myParent = document.querySelector('#peopleHere');
+const myNavigation = document.querySelector('nav');
+
+// All people button
+const btnAll = document.createElement('button');
+btnAll.textContent = "All Senators";
+btnAll.id = "btnAll"; // Add id attribute
+btnAll.addEventListener('click', () => displaySenators(senators)); // Corrected function name
+
+// Female people button
+const btnFemale = document.createElement('button');
+btnFemale.textContent = "Female Senators";
+btnFemale.id = "btnFemale"; // Add id attribute
+btnFemale.addEventListener('click', () => {
+    const arrayFemale = senators.filter(person => person.gender === 'female'); // Corrected variable
+    displaySenators(arrayFemale);
+});
+
+// Male people button
+const btnMale = document.createElement('button');
+btnMale.textContent = "Male Senators";
+btnMale.id = "btnMale"; // Add id attribute
+btnMale.addEventListener('click', () => {
+    const arrayMale = senators.filter(person => person.gender === 'male'); // Corrected variable
+    displaySenators(arrayMale);
+});
+
+// Other people button
+const btnOther = document.createElement('button');
+btnOther.textContent = "Others";
+btnOther.id = "btnOther"; // Add id attribute
+btnOther.addEventListener('click', () => {
+    const arrayOther = senators.filter(person => person.gender !== 'male' && person.gender !== 'female'); // Corrected variable
+    displaySenators(arrayOther);
+});
+
+// Add buttons to the page
+myNavigation.appendChild(btnAll);
+myNavigation.appendChild(btnFemale);
+myNavigation.appendChild(btnMale);
+myNavigation.appendChild(btnOther);
 
 // Loop through all the senators
-function displaySenators(senators) {
+function displaySenators(senators) { // Corrected function name
     myParent.innerHTML = "";
     senators.forEach(senator => {
         const myFigure = document.createElement('figure');
