@@ -17,7 +17,7 @@ const btnFemale = document.createElement('button');
 btnFemale.textContent = "Female Senators";
 btnFemale.id = "btnFemale"; // Add id attribute
 btnFemale.addEventListener('click', () => {
-    const arrayFemale = senators.filter(person => person.gender === 'female'); // Corrected variable
+    const arrayFemale = senators.filter(person => person.gender === 'F'); // Corrected variable
     displaySenators(arrayFemale);
 });
 
@@ -26,7 +26,7 @@ const btnMale = document.createElement('button');
 btnMale.textContent = "Male Senators";
 btnMale.id = "btnMale"; // Add id attribute
 btnMale.addEventListener('click', () => {
-    const arrayMale = senators.filter(person => person.gender === 'male'); // Corrected variable
+    const arrayMale = senators.filter(person => person.gender === 'M'); // Corrected variable
     displaySenators(arrayMale);
 });
 
@@ -35,7 +35,7 @@ const btnOther = document.createElement('button');
 btnOther.textContent = "Others";
 btnOther.id = "btnOther"; // Add id attribute
 btnOther.addEventListener('click', () => {
-    const arrayOther = senators.filter(person => person.gender !== 'male' && person.gender !== 'female'); // Corrected variable
+    const arrayOther = senators.filter(person => person.gender !== 'M' && person.gender !== 'F'); // Corrected variable
     displaySenators(arrayOther);
 });
 
@@ -66,10 +66,10 @@ function displaySenators(senators) { // Corrected function name
 
         // Assign gender class
         switch (senator.gender) {
-            case "female":
+            case "F":
                 myFigure.className = "female";
                 break;
-            case "male":
+            case "M":
                 myFigure.className = "male";
                 break;
             default:
